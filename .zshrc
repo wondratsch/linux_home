@@ -10,4 +10,8 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
-. /usr/share/powerline/zsh/powerline.zsh
+if [ -f "/usr/share/powerline/zsh/powerline.zsh" ]; then
+    . /usr/share/powerline/zsh/powerline.zsh
+else
+    PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+fi
