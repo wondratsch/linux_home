@@ -22,6 +22,7 @@ set showcmd
 
 "highlight searches
 set hlsearch
+set vi+=n
 
 "case insensitive search
 set ignorecase
