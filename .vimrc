@@ -47,3 +47,9 @@ set numberwidth=3
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+"habit breaking
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
