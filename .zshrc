@@ -1,3 +1,4 @@
+export GOPATH=$HOME/golang
 HISTFILE=~/.histfile
 HISTSIZE=3000
 SAVEHIST=5000
@@ -15,7 +16,11 @@ compinit
 if [ -f "/usr/share/powerline/zsh/powerline.zsh" ]; then
     . /usr/share/powerline/zsh/powerline.zsh
 else
-    PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+    if [ -f "/usr/share/powerline/bindings/zsh/powerline.zsh" ]; then
+        . /usr/share/powerline/bindings/zsh/powerline.zsh
+    else
+        PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+    fi
 fi
 
 
