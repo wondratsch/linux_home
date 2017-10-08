@@ -1,0 +1,27 @@
+export GOPATH=$HOME/golang
+
+alias ls='colorls -G'
+
+HISTFILE=~/.histfile
+HISTSIZE=3000
+SAVEHIST=5000
+setopt appendhistory extendedglob nomatch notify
+unsetopt autocd
+bindkey -v
+bindkey "^R" history-incremental-search-backward
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+
+#powerline foo
+if [ -f "/usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh" ]; then
+    . /usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
+
+#v to edit
+export VISUAL=vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
